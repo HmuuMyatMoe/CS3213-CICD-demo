@@ -58,7 +58,7 @@ jobs:
       # Run your test
       - name: Check Documentation
         run: |
-          if ${{ hashFiles('Documentation.md') != '' }}; then\
+          if !${{ hashFiles('Documentation.md') != '' }}; then\
             echo "The Documentation.md file does not exist or is empty"
             exit 1
           fi
